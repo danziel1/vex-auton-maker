@@ -1,14 +1,3 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-body {
-    background-color: #292929;
-    text-align: center;
-}
-
 #canvas-border {
     background-color: #181818;
     position: fixed;
@@ -22,7 +11,7 @@ body {
 }
 
 #canvas {
-    background-image: url("./assets/gameField.png");
+    background-image: url("./assets/images/gameField.png");
     background-size: cover;
     position: absolute;
     left: 1vw;
