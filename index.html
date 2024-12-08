@@ -3,11 +3,45 @@
     <head>
         <title>Auton Maker</title>
     </head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/controlPanel.css">
+    <link rel="stylesheet" href="static/outputCode.css">
+
 
     <body>
-        <div id="title">Auton Maker</div>
-        <canvas id="canvas"></canvas> 
+        <div id="canvas-border">
+            <canvas id="canvas"></canvas>
+        </div>
+
+<!-- get controls-title in controls -->
+        <div id="controls">
+            <div id="controls-title">Controls</div> 
+            <div id="left-controls">
+                <input type="text" name="setWidth" placeholder="Set Bot Width">
+                <button onclick="startUp()">Start Up</button>
+                <button onclick="moveForward()">Move Forward</button>
+                <button onclick="intakeIn()">Intake In</button>
+                <button onclick="addDelay()">Add Delay</button>
+                <button onclick="animateSequence()">Animate</button>
+
+
+            </div>
+            <div id="right-controls">
+                <input type="text" name="setLength" placeholder="Set Bot Height">
+                <button onclick="startBack()">Start Back</button>
+                <button onclick="moveReverse()">Move Reverse</button>
+                <button onclick="intakeOut()">Intake Out</button>
+                <button onclick="toggleClamp()">Toggle Clamp</button>
+                <button onclick="removeAll()">Remove All</button>
+            </div>
+        </div>
+
+        <div id="outputCode-border">
+            <div id="outputCode-title">OUTPUT</div>
+
+            <div id="outputCode">chassis.drive_distance(69);</div>
+        </div>
+
     </body>
 
     <script>

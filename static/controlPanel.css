@@ -1,0 +1,68 @@
+#controls {
+    font-size: 25px;
+    background-color: #181818;
+    color: white;
+    text-align: center;
+    position: fixed; /* Keeps the entire controls box fixed */
+    left: 1vw;
+    top: 3vh;
+    width: 24vw;
+    height: 51vh;
+    border-radius: 2vh;
+    box-sizing: border-box; /* Ensures padding doesn’t overflow dimensions */
+}
+
+#controls-title {
+    font-size: 45px; /* Adjust font size to fit inside the container */
+    text-align: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh; /* Adds space below the title */
+    position: relative; /* Makes it part of the normal flow inside #controls */
+    width: 100%; /* Full width of #controls */
+}
+
+#left-controls {
+    text-align: center;
+    position: fixed;
+    left: 1vw;
+    width: 12vw;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#right-controls {
+    text-align: center;
+    position: fixed;
+    left: 12vw;
+    width: 12vw;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#left-controls button, 
+#left-controls input,
+#right-controls button, 
+#right-controls input {
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    display: block;
+    text-align: center;
+    left: 2vw;
+    padding: 1.5vh;
+    width: 9vw;
+    border-radius: 2vh;
+    margin: 0.5vh;
+    box-sizing: border-box;
+}
+#left-controls input::placeholder,
+#right-controls input::placeholder {
+    color: black; /* Sets the placeholder text color to black */
+}
+
+
+

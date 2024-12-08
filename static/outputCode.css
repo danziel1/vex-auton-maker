@@ -1,0 +1,25 @@
+#outputCode-border {
+    position: fixed;
+    top: 3vh;
+    left: 75vw;
+    width: 24vw;
+    height: 95vh;
+    background-color: #181818;
+    border-radius: 2vh;
+    color: white;
+}
+
+#outputCode-title {
+    font-size: 45px; /* Adjust font size to fit inside the container */
+    text-align: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh; /* Adds space below the title */
+    position: relative; /* Makes it part of the normal flow inside #controls */
+    width: 100%; /* Full width of #controls */
+}
+
+#outputCode {
+    font-size: 15px;
+    padding-left: 1vw;;
+    text-align: left;
+}
