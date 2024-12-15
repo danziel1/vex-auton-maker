@@ -1,7 +1,8 @@
 class Node {
-    constructor(x, y) {
+    constructor(x, y, dir) {
         this.x = x;
         this.y = y;
+        this.dir = dir;
     }
 
     draw(ctx, size = 10, color = "black") {

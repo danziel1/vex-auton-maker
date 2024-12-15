@@ -15,6 +15,10 @@ class Graph {
         for (const node of this.nodes) {
             node.draw(ctx);
         }
+        for (let i=0; i<this.nodes.length-1; i++) {
+            var seg = new Segment(this.nodes[i], this.nodes[i+1]);
+            seg.draw(ctx);
+        }
     }
 
 
