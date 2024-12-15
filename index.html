@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/styles/controlPanel.css">
     <link rel="stylesheet" href="assets/styles/outputCode.css">
 
-
+<!-- add screenshot function - with watermark? -->
     <body>
         <div id="canvas-border">
             <canvas id="canvas"></canvas>
@@ -44,13 +44,19 @@
 
     </body>
 
-    <script>
+    <script src="modules/canvas/graph.js"></script>
+    <script src="modules/primatives/node.js"></script>
+    <script src="modules/canvas/click.js"></script>
 
-        canvas.width = 500;
-        canvas.height = 500;
+
+
+    <script>
+        const computedStyle = getComputedStyle(canvas); // gets css atributes after applied 
+        canvas.width = parseFloat(computedStyle.width);
+        canvas.height = parseFloat(computedStyle.height);
 
         const ctx = canvas.getContext("2d");
-
+        const graph = new Graph();
     </script>
 
 </html>
