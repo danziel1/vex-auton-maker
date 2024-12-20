@@ -11,7 +11,7 @@
 }
 
 #canvas {
-    background-image: url("../images/gameField.png");
+    background-image: url("../images/high-stakes-field.png");
     background-size: cover;
     position: absolute;
     left: 1vw;
