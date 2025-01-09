@@ -21,7 +21,16 @@ canvas.addEventListener('click', function(event) {
         var angle = Math.round(Math.atan2(yDist, xDist) * 180/Math.PI + 90);
         document.getElementById('outputCode').innerHTML += "chassis.turn_to_angle("+(angle - graph.bot.angleOffset)+");<br>";
 
-        var distance = Math.round(Math.sqrt(xDist**2 + yDist**2));
+xInches = (xDist / canvas.width) * 144;
+yInches = (yDist / canvas.height) * 144;
+
+console.log(canvas.width, canvas.height);
+console.log(xDist, yDist);
+console.log(xInches, yInches);
+
+var distance = Math.round(Math.sqrt(xInches ** 2 + yInches ** 2));
+console.log(distance);
+
         
         document.getElementById('outputCode').innerHTML += "chassis.drive_distance("+(distance)+");<br>";
 
