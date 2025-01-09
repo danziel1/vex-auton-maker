@@ -17,7 +17,7 @@
         <div id="controls">
             <div id="controls-title">CONTROLS</div> 
             <div id="left-controls">
-                <input type="text" name="setWidth" placeholder="Set Bot Width">
+                <button onclick="setBotLength()">Set Bot Length</button>
                 <button onclick="startUp()">Start Up</button>
                 <button onclick="moveForward()">Move Forward</button>
                 <button onclick="intakeIn()">Intake In</button>
@@ -27,7 +27,7 @@
 
             </div>
             <div id="right-controls">
-                <input type="text" name="setLength" placeholder="Set Bot Height">
+                <button onclick="setBotWidth()">Set Bot Width</button>
                 <button onclick="startBack()">Start Back</button>
                 <button onclick="moveReverse()">Move Reverse</button>
                 <button onclick="intakeOut()">Intake Out</button>
@@ -50,6 +50,8 @@
     <script src="modules/primatives/bot.js"></script>
 
     <script src="modules/canvas/click.js"></script>
+    <script src="modules/controlPanel/buttons.js"></script>
+
 
 
 

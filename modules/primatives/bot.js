@@ -1,6 +1,3 @@
-botLength = 50;
-botWidth = 50;
-
 class Bot {
     constructor(x, y, length, width, angle) {
         this.x = x;

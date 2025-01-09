@@ -2,6 +2,8 @@ class Graph {
     constructor() {
         this.nodes = [];
         this.bot = NaN;
+        this.botLength = 50; // needs pixel-inch conversion
+        this.botWidth = 50; // needs pixel-inch conversion
     }
 
     addNode(x, y, dir=0) {
