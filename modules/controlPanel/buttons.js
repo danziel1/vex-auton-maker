@@ -1,10 +1,15 @@
 function setBotLength() {
-    graph.botLength = prompt("Enter Length (inches)"); // needs pixel-inch conversion
+    length = prompt("Enter Length (inches)"); // needs pixel-inch conversion
+    
+    graph.botLength = (length * canvas.height) / 144;
+    console.log("Set bot length to " + graph.botLength);
 }
 
 function setBotWidth() {
-    graph.botWidth = prompt("Enter Width (inches)"); // needs pixel-inch conversion
-
+    width = prompt("Enter Width (inches)"); // needs pixel-inch conversion
+    
+    graph.botWidth = (width * canvas.width) / 144;
+    console.log("Set bot width to " + graph.botWidth);
 }
 
 function startUp() {
