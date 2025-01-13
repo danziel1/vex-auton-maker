@@ -16,11 +16,11 @@ function startBack() {
 }
 
 function moveForward() {
-
+    graph.driveDirection = "forward"
 }
 
 function moveReverse() {
-
+    graph.driveDirection = "reverse"
 }
 
 function intakeIn() {

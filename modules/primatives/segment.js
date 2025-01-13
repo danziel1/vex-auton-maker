@@ -9,7 +9,7 @@ class Segment {
         var dirColorWidth = 5
         ctx.beginPath();
         ctx.lineWidth = dirColorWidth;
-        if (this.p1.dir == 0) {
+        if (this.p1.dir == "forward") {
             ctx.strokeStyle = "green";
         }
         else {

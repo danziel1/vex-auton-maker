@@ -4,9 +4,10 @@ class Graph {
         this.bot = NaN;
         this.botLength = 50; // needs pixel-inch conversion
         this.botWidth = 50; // needs pixel-inch conversion
+        this.driveDirection = "forward"
     }
 
-    addNode(x, y, dir=0) {
+    addNode(x, y, dir=this.driveDirection) {
         this.nodes.push(new Node(x, y, dir));
     }
 

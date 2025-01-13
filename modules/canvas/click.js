@@ -14,30 +14,31 @@ canvas.addEventListener('click', function(event) {
         var yDist = y - graph.nodes[0].y;
         var angle = Math.round(Math.atan2(yDist, xDist) * 180/Math.PI + 90);
         graph.bot = new Bot(graph.nodes[0].x - (graph.botLength/2), graph.nodes[0].y - (graph.botWidth/2), graph.botLength, graph.botWidth, angle);
-        console.log("aaa: ", graph.botLength, graph.bot.length)
     }
     if (graph.nodes.length > 0) { // not first point 
         var xDist = x - graph.nodes[graph.nodes.length - 1].x;
         var yDist = y - graph.nodes[graph.nodes.length - 1].y;
         var angle = Math.round(Math.atan2(yDist, xDist) * 180/Math.PI + 90);
+        if (graph.nodes[graph.nodes.length - 1].dir == "reverse") {
+            angle += 180;
+        }
+        while (angle >= 360) {
+            angle -= 360;
+        }
         document.getElementById('outputCode').innerHTML += "chassis.turn_to_angle("+(angle - graph.bot.angleOffset)+");<br>";
-
         xInches = (xDist / canvas.width) * 144;
         yInches = (yDist / canvas.height) * 144;
-
-        console.log(canvas.width, canvas.height);
-        console.log(xDist, yDist);
-        console.log(xInches, yInches);
-
-        var distance = Math.round(Math.sqrt(xInches ** 2 + yInches ** 2)); // fix rounding 
-        console.log(distance);
+        var distance = Math.round(Math.sqrt(xInches ** 2 + yInches ** 2));
 
         
         document.getElementById('outputCode').innerHTML += "chassis.drive_distance("+(distance)+");<br>";
 
         
     }
-    graph.addNode(x, y, moveDirection);
+    if (graph.nodes.length > 1) {
+        graph.nodes[graph.nodes.length - 1].dir = graph.driveDirection;
+    }
+    graph.addNode(x, y);
     graph.draw(ctx);
 
 });
