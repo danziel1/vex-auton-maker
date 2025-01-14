@@ -13,11 +13,11 @@ function setBotWidth() {
 }
 
 function startUp() {
-
+    graph.botStartPos = "up";
 }
 
 function startBack() {
-
+    graph.botStartPos = "back";
 }
 
 function moveForward() {

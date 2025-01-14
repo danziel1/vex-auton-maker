@@ -5,6 +5,7 @@ class Graph {
         this.botLength = 50; // needs pixel-inch conversion
         this.botWidth = 50; // needs pixel-inch conversion
         this.driveDirection = "forward"
+        this.startPos = NaN;
     }
 
     addNode(x, y, dir=this.driveDirection) {

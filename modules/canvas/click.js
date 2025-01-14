@@ -13,7 +13,21 @@ canvas.addEventListener('click', function(event) {
         var xDist = x - graph.nodes[0].x;
         var yDist = y - graph.nodes[0].y;
         var angle = Math.round(Math.atan2(yDist, xDist) * 180/Math.PI + 90);
-        graph.bot = new Bot(graph.nodes[0].x - (graph.botLength/2), graph.nodes[0].y - (graph.botWidth/2), graph.botLength, graph.botWidth, angle);
+        if (graph.botStartPos == NaN) {
+            console.log('Start custom');
+            graph.bot = new Bot(graph.nodes[0].x - (graph.botLength/2), graph.nodes[0].y - (graph.botWidth/2), graph.botLength, graph.botWidth, angle);
+        }
+        else if (graph.botStartPos == "up") {
+            console.log('Start up');
+            graph.nodes[0].x = canvas.width/18 + (graph.botLength); // not /2 to put point in center of bot
+            graph.bot = new Bot(canvas.width/18 + (graph.botLength/2), graph.nodes[0].y - (graph.botWidth/2), graph.botLength, graph.botWidth, angle);
+        }
+        else { // start back
+            console.log('Start back');
+            graph.nodes[0].x =(graph.botLength/2);
+            graph.bot = new Bot((graph.botLength/4), graph.nodes[0].y - (graph.botWidth/2), graph.botLength, graph.botWidth, angle);
+        }
+        console.log(graph.nodes);
     }
     if (graph.nodes.length > 0) { // not first point 
         var xDist = x - graph.nodes[graph.nodes.length - 1].x;
