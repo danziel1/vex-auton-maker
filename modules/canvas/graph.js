@@ -2,10 +2,10 @@ class Graph {
     constructor() {
         this.nodes = [];
         this.bot = NaN;
-        this.botLength = 50; // needs pixel-inch conversion
-        this.botWidth = 50; // needs pixel-inch conversion
+        this.botLength = (12 * canvas.height) / 144;
+        this.botWidth = (12 * canvas.height) / 144;
         this.driveDirection = "forward"
-        this.startPos = NaN;
+        this.botStartPos = "custom";
     }
 
     addNode(x, y, dir=this.driveDirection) {
