@@ -36,8 +36,11 @@ canvas.addEventListener('click', function(event) {
         if (graph.nodes[graph.nodes.length - 1].dir == "reverse") {
             angle += 180;
         }
-        while (angle >= 360) {
+        while (angle - graph.bot.angleOffset >= 360) {
             angle -= 360;
+        }
+        while (angle - graph.bot.angleOffset < 0) {
+            angle += 360;
         }
         document.getElementById('outputCode').innerHTML += "chassis.turn_to_angle("+(angle - graph.bot.angleOffset)+");<br>";
         xInches = (xDist / canvas.width) * 144;
