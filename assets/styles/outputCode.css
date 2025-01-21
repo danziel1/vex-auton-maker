@@ -10,16 +10,19 @@
 }
 
 #outputCode-title {
-    font-size: 45px; /* Adjust font size to fit inside the container */
+    font-size: 45px;
     text-align: center;
     margin-top: 1vh;
-    margin-bottom: 1vh; /* Adds space below the title */
-    position: relative; /* Makes it part of the normal flow inside #controls */
-    width: 100%; /* Full width of #controls */
+    margin-bottom: 1vh;
+    position: relative;
+    width: 100%;
 }
 
-#outputCode {
+#outputCode { 
     font-size: 15px;
-    padding-left: 1vw;;
+    padding-left: 1vw;
     text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
