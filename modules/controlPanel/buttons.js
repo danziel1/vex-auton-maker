@@ -29,19 +29,22 @@ function moveReverse() {
 }
 
 function intakeIn() {
-
+    document.getElementById('outputCode').innerHTML += "Intake.spin(forward, 100, pct);<br>";
 }
 
 function intakeOut() {
-
+    document.getElementById('outputCode').innerHTML += "Intake.spin(reverse, 100, pct);<br>";
 }
 
 function addDelay() {
-
+    delay = prompt("Enter Delay (msec)");
+    document.getElementById('outputCode').innerHTML += "wait(" + delay + ", msec);<br>";
 }
 
+var clampState = false;
 function toggleClamp() {
-
+    clampState = !clampState;
+    document.getElementById('outputCode').innerHTML += "Clamp.set("+clampState+");<br>";
 }
 
 function removeAll() {
