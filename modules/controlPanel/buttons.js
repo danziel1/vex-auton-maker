@@ -48,7 +48,12 @@ function toggleClamp() {
 }
 
 function removeAll() {
-
+    graph = new Graph();
+    moveDirection = 0; // resets move direction
+    document.getElementById('outputCode').innerHTML = ""; // clears output
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // clears screen
+    
+    console.log("Reset canvas");
 }
 
 function animate() {
