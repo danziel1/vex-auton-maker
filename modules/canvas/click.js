@@ -42,7 +42,9 @@ canvas.addEventListener('click', function(event) {
         while (angle - graph.bot.angleOffset < 0) {
             angle += 360;
         }
-        document.getElementById('outputCode').innerHTML += "chassis.turn_to_angle("+(angle - graph.bot.angleOffset)+");<br>";
+        if (graph.nodes.length != 1) { // if placing 2nd node -> turns to 0 deg which is useless
+            document.getElementById('outputCode').innerHTML += "chassis.turn_to_angle("+(angle - graph.bot.angleOffset)+");<br>";
+        }
         xInches = (xDist / canvas.width) * 144;
         yInches = (yDist / canvas.height) * 144;
         var distance = Math.round(Math.sqrt(xInches ** 2 + yInches ** 2));
