@@ -52,10 +52,17 @@ function removeAll() {
     moveDirection = 0; // resets move direction
     document.getElementById('outputCode').innerHTML = ""; // clears output
     ctx.clearRect(0, 0, canvas.width, canvas.height); // clears screen
-    
+
     console.log("Reset canvas");
 }
 
-function animate() {
-
+function animateSequence() {
+    var code = document.getElementById('outputCode').innerHTML.split("<br>");
+    for (var i = 0; i < code.length; i++) {
+        if (code[i].includes("chassis.drive_distance")) {
+            var moveAmount = code[i].split("(")[1].split(")")[0];
+            console.log("Moving "+moveAmount+" inches");
+            moveDist(moveAmount);
+        }
+    }
 }
