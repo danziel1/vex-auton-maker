@@ -1,8 +1,6 @@
 function moveDist(dist) {
-    var startX = graph.bot.x;
-    var startY = graph.bot.y;
+    dist *= canvas.width/144;
     var angle = graph.bot.angle - 90;
-    dist = dist*canvas.width/144;
     var steps = Math.ceil(Math.abs(dist));
     var interval = 1; // update interval for how fast the bot moves
     var step = 0;
@@ -13,7 +11,6 @@ function moveDist(dist) {
             graph.bot.y += (dist / steps) * Math.sin(angle * Math.PI / 180);
             graph.draw();
             step++;
-            console.log(step,steps);
             setTimeout(moveStep, interval);
         }
     }
