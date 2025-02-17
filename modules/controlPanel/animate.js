@@ -2,7 +2,9 @@ function moveDist(dist) {
     dist *= canvas.width/144;
     var angle = graph.bot.angle - 90;
     var steps = Math.ceil(Math.abs(dist));
-    var interval = 3; // update interval for how fast the bot moves
+    // get value of monitor refresh rate
+    
+    var interval = 10; // update interval for how fast the bot moves
     var step = 0;
 
     function moveStep() {
