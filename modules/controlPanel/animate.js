@@ -1,40 +1,46 @@
 function moveDist(dist) {
-    dist *= canvas.width/144;
-    var angle = graph.bot.angle - 90;
-    var steps = Math.ceil(Math.abs(dist));
-    // get value of monitor refresh rate
-    
-    var interval = 10; // update interval for how fast the bot moves
-    var step = 0;
+    dist = dist*canvas.width/144;
+    return new Promise((resolve) => {
+        var angle = (graph.bot.angle - 90) * Math.PI / 180;
+        var steps = Math.ceil(Math.abs(dist));
+        var interval = 5;
+        var step = 0;
 
-    function moveStep() {
-        if (step < steps) {
-            graph.bot.x += (dist / steps) * Math.cos(angle * Math.PI / 180);
-            graph.bot.y += (dist / steps) * Math.sin(angle * Math.PI / 180);
-            graph.draw();
-            step++;
-            setTimeout(moveStep, interval);
+        function moveStep() {
+            if (step < steps) {
+                graph.bot.x += (dist / steps) * Math.cos(angle);
+                graph.bot.y += (dist / steps) * Math.sin(angle);
+                graph.draw();
+                step++;
+                setTimeout(moveStep, interval);
+            } else {
+                resolve();
+            }
         }
-    }
 
-    moveStep();
+        moveStep();
+    });
 }
 
 function turnTo(targetAngle) {
-    var startAngle = graph.bot.angle;
-    var angleDiff = targetAngle - startAngle;
-    var steps = Math.abs(angleDiff / 5);
-    var interval = 50;
-    var step = 0;
+    return new Promise((resolve) => {
+        var startAngle = (graph.bot.angle - 90) * Math.PI / 180;
+        var angleDiff = targetAngle - startAngle;
+        var steps = Math.ceil(Math.abs(angleDiff));
+        var interval = 3;
+        var step = 0;
 
-    function turnStep() {
-        if (step < steps) {
-            graph.bot.angle += angleDiff / steps;
-            graph.draw();
-            step++;
-            setTimeout(turnStep, interval);
+        function turnStep() {
+            if (step < steps) {
+                graph.bot.angle += angleDiff / steps;
+                graph.draw();
+                step++;
+                setTimeout(turnStep, interval);
+            } else {
+                resolve();
+            }
         }
-    }
 
-    turnStep();
+        turnStep();
+    });
 }

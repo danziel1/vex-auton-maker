@@ -56,13 +56,19 @@ function removeAll() {
     console.log("Reset canvas");
 }
 
-function animateSequence() {
+async function animateSequence() {
     var code = document.getElementById('outputCode').innerHTML.split("<br>");
+
     for (var i = 0; i < code.length; i++) {
         if (code[i].includes("chassis.drive_distance")) {
             var moveAmount = code[i].split("(")[1].split(")")[0];
-            console.log("Moving "+moveAmount+" inches");
-            moveDist(moveAmount);
+            console.log("Moving " + moveAmount + " inches");
+            await moveDist(moveAmount);
+        }
+        if (code[i].includes("chassis.turn_to_angle")) {
+            var turnAngle = code[i].split("(")[1].split(")")[0];
+            console.log("Turning to " + turnAngle + " degrees");
+            await turnTo(turnAngle);
         }
     }
 }

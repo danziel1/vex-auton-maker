@@ -49,7 +49,9 @@ canvas.addEventListener('click', function(event) {
         yInches = (yDist / canvas.height) * 144;
         var distance = Math.round(Math.sqrt(xInches ** 2 + yInches ** 2));
 
-        
+        if (graph.driveDirection == "reverse") {
+            distance *= -1;
+        } 
         document.getElementById('outputCode').innerHTML += "chassis.drive_distance("+(distance)+");<br>";
 
         
